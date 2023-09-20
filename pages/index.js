@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import HomePage from "./HomePage";
 import Login from "./Login";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -10,10 +11,16 @@ export default function Home() {
     if (email === "user@example.com" && password === "1Password") {
       setTimeout(() => {
         setLoggedIn(true);
-        alert(`welcome ${email}`);
+        toast.success(`Welcome ${email}`, {
+          position: "top-right",
+          autoClose: 3000,
+        });
       }, 500);
     } else {
-      alert("Invalid credentials");
+      toast.error("Invalid credentials", {
+        position: "top-right",
+        autoClose: 1000,
+      });
     }
   };
 
