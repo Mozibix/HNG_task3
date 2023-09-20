@@ -8,7 +8,10 @@ export default function Home() {
 
   const handleLogin = (email, password) => {
     if (email === "user@example.com" && password === "1Password") {
-      setLoggedIn(true);
+      setTimeout(() => {
+        setLoggedIn(true);
+        alert(`welcome ${email}`);
+      }, 500);
     } else {
       alert("Invalid credentials");
     }

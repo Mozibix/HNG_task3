@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { BiLoaderCircle } from "react-icons/bi";
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
+    setLoading(true);
     onLogin(email, password);
-    onLogin ? "" : alert(`welcome ${email}`);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   };
 
   return (
@@ -53,7 +58,16 @@ const Login = ({ onLogin }) => {
                   </div>
 
                   <button onClick={handleLogin} type="submit">
-                    Sign in
+                    {loading ? (
+                      <span className="flex justify-center items-center">
+                        <BiLoaderCircle
+                          className="mr-2 animate-spin"
+                          size={22}
+                        />
+                      </span>
+                    ) : (
+                      <span>Sign in</span>
+                    )}
                   </button>
                 </div>
                 <div className="bottom_sec">
