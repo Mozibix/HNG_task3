@@ -1,0 +1,11 @@
+/* ----------------MIXINS---------------- */
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------CONTAINER---------------- */
+.container_main {
+  padding: 1rem;
+}
