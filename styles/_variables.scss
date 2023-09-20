@@ -127,3 +127,52 @@
     }
   }
 }
+
+.mobile_search_bar {
+  @include flex_center();
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 95%;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: 85%;
+  }
+
+  &_inner {
+    @include flex_center();
+    border: 2px solid $light_border;
+    background: $white;
+    width: 100%;
+
+    @media screen and (min-width: 400px) {
+      width: fit-content;
+    }
+
+    span {
+      @include flex_center();
+      background: $light_border;
+      width: 3rem;
+      aspect-ratio: 1/1;
+      font-size: 1.8rem;
+      padding-bottom: 0.3rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.4rem;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      background: transparent;
+      &::placeholder {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
