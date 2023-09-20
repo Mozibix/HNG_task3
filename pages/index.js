@@ -14,7 +14,5 @@ export default function Home() {
     }
   };
 
-  return (
-    <div>{!loggedIn ? <Login onLogin={handleLogin} /> : <HomePage />}</div>
-  );
+  return <div>{loggedIn ? <HomePage /> : <Login onLogin={handleLogin} />}</div>;
 }
