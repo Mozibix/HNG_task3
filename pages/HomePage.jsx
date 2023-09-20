@@ -151,6 +151,7 @@ const HomePage = () => {
     };
   }, [isNavbarFixed]);
   return (
+    // ADD ANIMATIONS AND SEARCH BAR TO THIS COMPONENT AND DESIGN TH ERROR PAGE
     <>
       <nav className={`nav ${isNavbarFixed ? "nav_fixed" : ""}`}>
         <div className="nav_inner container_main">
@@ -190,6 +191,25 @@ const HomePage = () => {
         </div>
       </nav>
       <main>
+        <div className="mobile_search_bar container_main">
+          <div className="mobile_search_bar_inner">
+            {loading ? (
+              <span>
+                <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+              </span>
+            ) : (
+              <span>
+                <AiOutlineSearch />
+              </span>
+            )}
+            <input
+              type="text"
+              placeholder="search"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+            />
+          </div>
+        </div>
         <section className="hero_sec">
           <div className="hero_inner container_main">
             {loading ? (
