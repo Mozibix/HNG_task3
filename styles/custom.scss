@@ -226,6 +226,21 @@ ul {
         scale: 0.9;
       }
 
+      &_inner {
+        &.mobile_card {
+          display: block;
+          @media screen and (min-width: 992px) {
+            display: none;
+          }
+          &.desktop_card {
+            display: none;
+            @media screen and (min-width: 992px) {
+              display: block;
+            }
+          }
+        }
+      }
+
       img {
         width: 100%;
         aspect-ratio: 1/1;
