@@ -170,7 +170,7 @@ const HomePage = () => {
       delay: 0,
       duration: 400,
       easing: "ease",
-      disable: "mobile",
+      disable: window.innerWidth < 1024,
       once: false,
       mirror: false,
       anchorPlacement: "top-bottom",
