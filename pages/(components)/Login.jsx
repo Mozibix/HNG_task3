@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-export const Login = ({ onLogin }) => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -80,3 +80,5 @@ export const Login = ({ onLogin }) => {
     </>
   );
 };
+
+export default Login;
