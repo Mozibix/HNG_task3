@@ -79,6 +79,7 @@ const Login = ({ onLogin }) => {
               height={2000}
               src="/images/signin_bg.png"
               alt="signin_bg"
+              className="img_signin"
             />
           </div>
         </div>
