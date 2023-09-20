@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiChevronDown, BiLoaderCircle } from "react-icons/bi";
 import { TfiGallery } from "react-icons/tfi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const images = [
   {
@@ -150,10 +154,37 @@ const HomePage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isNavbarFixed]);
+
+  useEffect(() => {
+    const AOS = require("aos");
+    AOS.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: -3000,
+      delay: 0,
+      duration: 400,
+      easing: "ease",
+      disable: "mobile",
+      once: false,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
+
   return (
-    // ADD ANIMATIONS AND SEARCH BAR TO THIS COMPONENT AND DESIGN TH ERROR PAGE
     <>
-      <nav className={`nav ${isNavbarFixed ? "nav_fixed" : ""}`}>
+      <nav
+        className={`nav ${isNavbarFixed ? "nav_fixed" : ""}`}
+        data-aos="flip-right"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+      >
         <div className="nav_inner container_main">
           <div className="nav_left">
             <span>
@@ -243,6 +274,9 @@ const HomePage = () => {
                         height={500}
                         src={image.src}
                         alt={image.tag}
+                        data-aos="zoom-in"
+                        data-aos-delay="100"
+                        data-aos-duration="1000"
                       />
                     </div>
                   </div>
