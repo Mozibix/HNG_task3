@@ -240,12 +240,15 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  overflow: hidden;
   @include flex_center();
   width: 100%;
   height: 100vh;
   color: $black;
 
   &_inner {
+    position: relative;
     width: 100%;
     max-width: 55rem;
     display: grid;
@@ -268,7 +271,7 @@ ul {
       @media screen and (min-width: 768px) {
         display: block;
       }
-      img {
+      .img_signin {
         width: 100%;
         height: fit-content;
       }
