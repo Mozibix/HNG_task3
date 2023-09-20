@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -73,7 +74,12 @@ const Login = ({ onLogin }) => {
           </div>
 
           <div className="img_sec">
-            <img src="/images/signin_bg.png" alt="signin_bg" />
+            <Image
+              width={2000}
+              height={2000}
+              src="/images/signin_bg.png"
+              alt="signin_bg"
+            />
           </div>
         </div>
       </div>

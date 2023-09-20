@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiChevronDown, BiLoaderCircle } from "react-icons/bi";
@@ -217,7 +218,12 @@ const HomePage = () => {
                     onTouchEnd={handleSort}
                   >
                     <div className="hero_image_card_inner">
-                      <img src={image.src} alt={image.tag} />
+                      <Image
+                        width={500}
+                        height={500}
+                        src={image.src}
+                        alt={image.tag}
+                      />
                     </div>
                   </div>
                 ))}
