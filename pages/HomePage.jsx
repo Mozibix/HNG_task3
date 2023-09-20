@@ -271,7 +271,18 @@ const HomePage = () => {
                     onTouchMove={() => handleDragEnter(index)}
                     onTouchEnd={handleSort}
                   >
-                    <div className="hero_image_card_inner">
+                    {/* MOBILE CARD */}
+                    <div className="hero_image_card_inner mobile_card">
+                      <Image
+                        width={500}
+                        height={500}
+                        src={image.src}
+                        alt={image.tag}
+                      />
+                    </div>
+
+                    {/*  DESKTOP CARD */}
+                    <div className="hero_image_card_inner desktop_card">
                       <Image
                         width={500}
                         height={500}
