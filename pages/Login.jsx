@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiLoaderCircle } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -9,8 +10,14 @@ const Login = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
+    if (!email || !password) {
+      toast.error("Enter both email and password");
+      return;
+    }
+
     setLoading(true);
     onLogin(email, password);
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
